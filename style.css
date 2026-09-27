@@ -216,11 +216,20 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.brand-symbol {
+  display: block;
+  width: 72px;
+  height: 44px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .logo-mark {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .brand-name {
@@ -2438,6 +2447,64 @@ body {
   width: 100%;
 }
 
+.faq-section {
+  position: relative;
+  padding: 60px 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+  max-width: 900px;
+  margin: 34px auto 0;
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 20px 56px 20px 22px;
+  color: var(--text-heading);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold-primary);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 22px 20px;
+  color: var(--text-body);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3224,16 +3291,17 @@ body {
   }
 
   .navbar .brand-name {
-    font-size: 23px;
-    letter-spacing: 1.8px;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+  }
+
+  .navbar .brand-symbol {
+    width: 54px;
+    height: 34px;
   }
 
   .navbar .brand-o::after {
     display: none;
-  }
-
-  .brand-sub {
-    font-size: 7px;
   }
 
   .btn-quote {
@@ -3306,19 +3374,19 @@ body {
   }
 
   .hero-bg-image {
-    object-position: 50% 28%;
-    opacity: 0.92;
-    filter: brightness(0.98) contrast(1.06) saturate(1.15);
-    transform: translate(-50%, -50%) scale(1.04);
+    object-position: 50% 35%;
+    opacity: 1;
+    filter: brightness(1.16) contrast(1.08) saturate(1.2);
+    transform: translate(-50%, -50%) scale(1.02);
   }
 
   .hero-video-overlay {
     background: linear-gradient(
       180deg,
-      rgba(20, 24, 27, 0.72) 0%,
-      rgba(20, 24, 27, 0.48) 32%,
-      rgba(20, 24, 27, 0.22) 65%,
-      rgba(20, 24, 27, 0.82) 100%
+      rgba(20, 24, 27, 0.58) 0%,
+      rgba(20, 24, 27, 0.34) 32%,
+      rgba(20, 24, 27, 0.12) 65%,
+      rgba(20, 24, 27, 0.68) 100%
     );
   }
 
@@ -3998,7 +4066,12 @@ body {
 /* Very Small Screen Phones (max-width: 380px) */
 @media (max-width: 380px) {
   .navbar .brand-name {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .navbar .brand-symbol {
+    width: 46px;
+    height: 30px;
   }
 
   .hero-headline {
